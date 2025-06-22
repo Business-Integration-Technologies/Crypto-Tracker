@@ -1,0 +1,241 @@
+.App {
+  text-align: center;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  color: white;
+  min-height: 100vh;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #333;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.App-header {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.App-header h1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #cbd5e0;
+  margin-bottom: 30px;
+}
+
+.status {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  display: inline-block;
+}
+
+.connected {
+  color: #4ade80;
+}
+
+.disconnected {
+  color: #ef4444;
+}
+
+.crypto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin: 50px 0;
+}
+
+.crypto-card {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid #475569;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.crypto-card:hover {
+  transform: translateY(-8px);
+  border-color: #667eea;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.crypto-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.crypto-name img {
+  border-radius: 50%;
+}
+
+.symbol {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-left: auto;
+}
+
+.crypto-price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #fbbf24;
+  font-family: 'Courier New', monospace;
+}
+
+.crypto-change {
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.crypto-change.positive {
+  color: #10b981;
+  background-color: rgba(16, 185, 129, 0.15);
+}
+
+.crypto-change.negative {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.15);
+}
+
+.crypto-stats {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  text-align: left;
+}
+
+.crypto-stats div {
+  margin: 5px 0;
+}
+
+.features {
+  margin: 80px 0;
+}
+
+.features h2 {
+  color: #667eea;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 30px 20px;
+  transition: transform 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  color: #e2e8f0;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.feature-card p {
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.tech-stack {
+  margin: 80px 0;
+}
+
+.tech-stack h2 {
+  color: #667eea;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.tech-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.tech-badge:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .crypto-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .App-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tech-badges {
+    justify-content: center;
+  }
+}
